@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CreateMenuController;
 use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\ManagementProdukController;
 use App\Http\Controllers\CustomerController;
@@ -36,8 +37,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['CheckUserRole:superadmin'])->group(function () {
         // Routes accessible only to superadmins
         Route::get('/admin-account', [SuperadminController::class, 'index'])->name('admin.account');
-        Route::get('/management-produk', [ManagementProdukController::class, 'index'])->name('management-produk.index');
+        Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
+        Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
+        Route::post('/management-produk', [ManagementProdukController::class, 'store'])->name('management-produk.store');
+        
+        
         Route::get('/dashboard-admin', [DashboardAdminController::class, 'dashboard_admin'])->name('superadmin.dashboard_admin');
+        Route::get('/create-menu', [CreateMenuController::class, 'create'])->name('management_produk.create_menu');
     });
 
     Route::middleware(['CheckUserRole:customer'])->group(function () {

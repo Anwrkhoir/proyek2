@@ -28,5 +28,12 @@ class ProdukSeeder extends Seeder
             'kategori_id' => 1,
             'detail' => 'keren', 
         ]);
+
+        Produk::create([
+            'nama_produk' => 'BOBA',
+            'harga' => 13000,
+            'kategori_id' => 2,
+            'detail' => 'enakkk bangeet', 
+        ]);
     }
 }
