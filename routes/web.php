@@ -40,14 +40,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
         Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
         Route::post('/management-produk', [ManagementProdukController::class, 'store'])->name('management-produk.store');
-        
-        
+
         Route::get('/dashboard-admin', [DashboardAdminController::class, 'dashboard_admin'])->name('superadmin.dashboard_admin');
         Route::get('/create-menu', [CreateMenuController::class, 'create'])->name('management_produk.create_menu');
     });
 
     Route::middleware(['CheckUserRole:customer'])->group(function () {
-        Route::get('/customer', [CustomerController::class, 'index'])->name('customer.customer');
+        Route::get('/dashboard-customer', [CustomerController::class, 'index'])->name('customer.dashboard-customer');
+        Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
+        Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
     });
 });
 
