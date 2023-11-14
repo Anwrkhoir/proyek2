@@ -3,6 +3,9 @@
 use App\Http\Controllers\admin\CreateMenuController;
 use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\ManagementProdukController;
+use App\Http\Controllers\admin\PesananController;
+use App\Http\Controllers\admin\TransaksiController;
+use App\Http\Controllers\customer\CartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -40,17 +43,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
         Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
         Route::post('/management-produk', [ManagementProdukController::class, 'store'])->name('management-produk.store');
-
         Route::get('/dashboard-admin', [DashboardAdminController::class, 'dashboard_admin'])->name('superadmin.dashboard_admin');
         Route::get('/create-menu', [CreateMenuController::class, 'create'])->name('management_produk.create_menu');
+        Route::get('/pesanan', [PesananController::class, 'pesanan'])->name('superadmin.pesanan');
+        Route::get('/transaksi', [TransaksiController::class, 'transaksi'])->name('superadmin.transaksi');
     });
 
     Route::middleware(['CheckUserRole:customer'])->group(function () {
         Route::get('/dashboard-customer', [CustomerController::class, 'index'])->name('customer.dashboard-customer');
-        Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
-        Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
+        Route::get('/cart-customer', [CartController::class, 'cart'])->name('customer.cart-customer');
+        // Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
+        // Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
     });
-});
+});  
 
 // Route::get('/register', 'RegisterController@showRegistrationForm');
 // Route::post('/register', 'RegisterController@register');

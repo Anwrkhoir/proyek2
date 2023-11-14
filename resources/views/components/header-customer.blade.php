@@ -22,6 +22,7 @@
           <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Tentang</a>
           <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">Kontak</a>
           <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="#">History</a>
+          
   
           <div class="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
             <button type="button" class="flex items-center w-full text-white/[.8] hover:text-white font-medium">
@@ -41,6 +42,12 @@
               </a>
             </div>
           </div>
+{{-- cart --}}
+          <a class="font-medium text-white/[.8] hover:text-white sm:py-6" href="/cart-customer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-6 h-6 ">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+            </svg>
+            </a>
   
           <div class="hs-dropdown relative inline-flex [--placement:bottom-right]">
             <button id="hs-dropdown-with-header" type="button" class="hs-dropdown-toggle inline-flex flex-shrink-0 justify-center items-center gap-2 h-[2.375rem] w-[2.375rem] rounded-full font-medium bg-white text-gray-700 align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-white transition-all text-xs dark:bg-gray-800 dark:hover:bg-slate-800 dark:text-gray-400 dark:hover:text-white dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800">
@@ -61,6 +68,7 @@
                 </a>
                 <form method="POST" action="{{ route('logout') }}">
                             @csrf
+                            @method('POST')
 
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
