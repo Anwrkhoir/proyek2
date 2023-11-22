@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\CreateMenuController;
 use App\Http\Controllers\admin\DashboardAdminController;
+use App\Http\Controllers\admin\EditMenuController;
 use App\Http\Controllers\admin\ManagementProdukController;
 use App\Http\Controllers\admin\PesananController;
 use App\Http\Controllers\admin\TransaksiController;
@@ -45,6 +46,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/management-produk', [ManagementProdukController::class, 'store'])->name('management-produk.store');
         Route::get('/dashboard-admin', [DashboardAdminController::class, 'dashboard_admin'])->name('superadmin.dashboard_admin');
         Route::get('/create-menu', [CreateMenuController::class, 'create'])->name('management_produk.create_menu');
+        Route::get('/edit-menu/{id}', [ManagementProdukController::class, 'edit'])->name('management_produk.edit_menu');
+        Route::put('/update-menu/{id}', [ManagementProdukController::class, 'update'])->name('management_produk.update_menu');
+        Route::delete('/delete-menu/{id}', [ManagementProdukController::class, 'delete'])->name('management_produk.delete_menu');
         Route::get('/pesanan', [PesananController::class, 'pesanan'])->name('superadmin.pesanan');
         Route::get('/transaksi', [TransaksiController::class, 'transaksi'])->name('superadmin.transaksi');
     });
@@ -52,8 +56,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(['CheckUserRole:customer'])->group(function () {
         Route::get('/dashboard-customer', [CustomerController::class, 'index'])->name('customer.dashboard-customer');
         Route::get('/cart-customer', [CartController::class, 'cart'])->name('customer.cart-customer');
-        // Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
-        // Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
+        
     });
 });  
 

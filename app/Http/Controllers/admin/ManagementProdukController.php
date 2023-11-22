@@ -55,5 +55,81 @@ class ManagementProdukController extends Controller
         }
     }
 
+    public function edit($id){
+        $produk=Produk::find($id); //variabel
+        if(!$produk){
+            return redirect()->route('management-produk.makanan');
+        }
+        return view('superadmin/management_produk/edit',compact('produk'));
+    }
+
+    public function update(Request $request, $id){
+        // dd($request->all());
+        $attrs = $request->validate([
+            "name" => "required",
+            "harga" => "required",
+            "kategori_id" => "required",
+            "detail" => "required"
+        ]);
+        $produk=Produk::find($id); //variabel
+        if(!$produk){
+            return redirect()->route('management-produk.makanan');
+        }
+        $photoName = "";
+        if ($request->hasFile('foto')) {
+            if ($produk->foto) {
+                $photoPath = public_path('uploads') . '/' . $produk->foto;
+        
+                // Check if the file exists before attempting to delete it
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
+            }
+            $photo = $request->file('foto');
+        $timestamp = now()->timestamp; // Dapatkan timestamp saat ini
+        $photoName = $timestamp . '.' . $photo->getClientOriginalExtension(); // Nama file dengan timestamp
+
+        $photo->move(public_path('uploads'), $photoName);
+        $produk->foto=$photoName;
+
+        }
+        $produk->nama_produk=$attrs['name'];
+        $produk->harga=$attrs['harga'];
+        $produk->kategori_id=$attrs['kategori_id'];
+        $produk->detail=$attrs['detail'];
+        $produk->save();
+
+
+        if ($attrs['kategori_id']==1) {
+        return redirect()->route('management-produk.makanan');
+        }else {
+        return redirect()->route('management-produk.minuman');
+        
+        }
+    }
+
+    public function delete($id){
+        // dd('anwar');
+        $produk=Produk::find($id); //variabel
+
+        if(!$produk){
+            return redirect()->route('management-produk.makanan');
+        }
+        if ($produk->foto) {
+            $photoPath = public_path('uploads') . '/' . $produk->foto;
+    
+            // Check if the file exists before attempting to delete it
+            if (file_exists($photoPath)) {
+                unlink($photoPath);
+            }
+        }
+        $produk->delete();
+        if ($produk->kategori_id==1) {
+            return redirect()->route('management-produk.makanan');
+            }else {
+            return redirect()->route('management-produk.minuman');
+            
+            }
+    }
 
 }

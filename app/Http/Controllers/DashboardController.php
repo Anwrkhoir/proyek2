@@ -13,9 +13,16 @@ class DashboardController extends Controller
          return redirect()->route('superadmin.dashboard_admin');
 
         }
-        $makanan=Produk::where("kategori_id",1)->get();
-    
-        return view('customer.dashboard-customer',compact("makanan"));
+        $makanan = Produk::where("kategori_id", 1)->get();
+        $minuman = Produk::where("kategori_id", 2)->get();
+
+        $data = [
+        'makanan' => $makanan,
+        'minuman' => $minuman,
+        ];
+
+return view('customer.dashboard-customer', $data);
+
 
     }
 }

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
-            $table->string('produk_id');
+            $table->unsignedBigInteger('produk_id');
             $table->string('pcs');
-            $table->string('kategori_id');
-            $table->string('user_id');
+            $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('layanan');
             $table->string('status');
             $table->timestamps();

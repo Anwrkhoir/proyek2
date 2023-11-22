@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->integer('harga');
             $table->unsignedBigInteger('kategori_id');
-            $table->string('detail');
+            $table->string('detail')->nullable();
             $table->string('foto')->nullable();
             $table->timestamps();
             // cara membuat relasi
