@@ -27,7 +27,7 @@
             </button>
             <div class="w-full p-4">
                 <div x-show="slide === 0" class="transition-opacity duration-300" x-transition:enter="opacity-0" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="opacity-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
-                    <img src="{{asset('assets/logo/logo.png')}}" alt="Image 1" class="w-full rounded-lg shadow-md">
+                    <img src="{{asset('assets/image/promo0.png')}}" alt="Image 1" class="w-full rounded-lg shadow-md">
                 </div>
                 <div x-show="slide === 1" class="transition-opacity duration-300" x-transition:enter="opacity-0" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="opacity-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
                     <img src="{{asset('assets/image/promo2.png')}}" alt="Image 2" class="w-full rounded-lg shadow-md">
@@ -47,7 +47,7 @@
 
         </div>
 
-        <div class='min-h-screen bg-red-50 flex justify-center items-center'> 
+        <div class='min-h-screen bg-red-200 flex justify-center items-center'> 
             <div>
                 <p class="text-2xl font-mono">MENU TERLARIS</p>
                 <!-- Card Blog -->
@@ -65,7 +65,7 @@
           Ikan Bakar
         </span>
         <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:hover:text-white">
-          Rp 15000
+          Rp 15.000
         </h3>
         <p class="mt-3 text-gray-500">
           Ikan + Sayuran + Sambal
@@ -82,17 +82,17 @@
     <!-- Card 2-->
     <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
       <div class="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
-        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/ikan bakar.jpeg')}}" alt="image">
+        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/mie madesu.jpeg')}}" alt="image">
       </div>
       <div class="p-4 md:p-6">
         <span class="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
-          Ikan Bakar
+          Mie Madesu
         </span>
         <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:hover:text-white">
-          Rp 15000
+          Rp 10.000
         </h3>
         <p class="mt-3 text-gray-500">
-          Ikan + Sayuran + Sambal
+          Mie pedas level + sayur + add toping 2.000 
         </p>
       </div>
       <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200  dark:border-gray-700 dark:divide-gray-700">
@@ -106,17 +106,17 @@
     <!-- Card 3-->
     <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
       <div class="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
-        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/ikan bakar.jpeg')}}" alt="image">
+        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/ayamkampung.jpeg')}}" alt="image">
       </div>
       <div class="p-4 md:p-6">
         <span class="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
-          Ikan Bakar
+          Ayam Kampung goreng
         </span>
         <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:hover:text-white">
-          Rp 15000
+          Rp 13.000
         </h3>
         <p class="mt-3 text-gray-500">
-          Ikan + Sayuran + Sambal
+          Ayam + Lalap + Sambal + add nasi 3.000
         </p>
       </div>
       <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200  dark:border-gray-700 dark:divide-gray-700">
@@ -130,17 +130,17 @@
     <!-- Card 4-->
     <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
       <div class="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
-        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/ikan bakar.jpeg')}}" alt="image">
+        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/minum1.jpeg')}}" alt="image">
       </div>
       <div class="p-4 md:p-6">
         <span class="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
-          Ikan Bakar
+          Es Anti Galau
         </span>
         <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:hover:text-white">
-          Rp 15000
+          Rp 5.000
         </h3>
         <p class="mt-3 text-gray-500">
-          Ikan + Sayuran + Sambal
+          Perpaduan es dan sirup yang segar dengan selasih
         </p>
       </div>
       <div class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200  dark:border-gray-700 dark:divide-gray-700">

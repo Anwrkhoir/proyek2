@@ -13,7 +13,7 @@
     
     <div class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]">
       <div class="h-52 flex flex-col justify-center items-center bg-blue-600 rounded-t-xl">
-        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/ikan bakar.jpeg')}}" alt="image">
+        <img class="w-full h-52 rounded-t-xl" width="20" height="10" src="{{asset('assets/image/mie madesu.jpeg')}}" alt="image">
       </div>
       <div class="p-4 md:p-6">
         <span class="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500">
