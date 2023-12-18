@@ -132,4 +132,14 @@ class ManagementProdukController extends Controller
             }
     }
 
+    public function search(Request $request, $id)
+    {
+        $query = $request->input('query');
+        $produk = Produk::where('nama_produk')->get();
+        $produk = Produk::with('kategori')->where('kategori_id')->get();
+        
+        return view('superadmin/management_produk/index', compact('produk'));
+        // return view('management_produk.index', ['produk' => $produk]);
+    }
+
 }

@@ -15,6 +15,7 @@ class Transaksi extends Model
         ('Kategori_id'),
         ('pembayaran_id'),
         ('tanggal'),
+        ('status'),
         ('total'),
 
     ];

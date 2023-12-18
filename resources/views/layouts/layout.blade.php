@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Kedai EsEm</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <title>Kedai EsEm</title>
 
-        
-        @vite('resources/js/app.js')
-        @vite('resources/css/app.css')
-    </head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+
+    @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
+</head>
+
 <body class="bg-gray-50 dark:bg-slate-900">
-  <!-- ========== HEADER ========== -->
-  @include("components.header-customer")
-  <!-- ========== END HEADER ========== -->
+    <!-- ========== HEADER ========== -->
+    @include('components.header-customer')
+    <!-- ========== END HEADER ========== -->
 
- 
 
-  <!-- ========== MAIN CONTENT ========== -->
-  {{-- <!-- Sidebar Toggle -->
+
+    <!-- ========== MAIN CONTENT ========== -->
+    {{-- <!-- Sidebar Toggle -->
   <div class="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden dark:bg-gray-800 dark:border-gray-700">
     <div class="flex items-center py-4">
       <!-- Navigation Toggle -->
@@ -51,12 +53,12 @@
   </div>
   <!-- End Sidebar Toggle --> --}}
 
-  <!-- Sidebar -->
-  {{-- @include('components.sidebar') --}}
-  <!-- End Sidebar -->
+    <!-- Sidebar -->
+    {{-- @include('components.sidebar') --}}
+    <!-- End Sidebar -->
 
-  <!-- Content -->
-  {{-- <div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72"> --}}
+    <!-- Content -->
+    {{-- <div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72"> --}}
     <!-- Page Heading -->
     @yield('content')
     <!-- <header>
@@ -79,11 +81,12 @@
       </div>
     </header> -->
     <!-- End Page Heading -->
-  </div>
-   <!-- ========== FOOTER ========== -->
-@include('components.footer')
-  <!-- ========== END FOOTER ========== -->
-  <!-- End Content -->
-  <!-- ========== END MAIN CONTENT ========== -->
+    </div>
+    <!-- ========== FOOTER ========== -->
+    @include('components.footer')
+    <!-- ========== END FOOTER ========== -->
+    <!-- End Content -->
+    <!-- ========== END MAIN CONTENT ========== -->
 </body>
+
 </html>

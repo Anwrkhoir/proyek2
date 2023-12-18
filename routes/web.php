@@ -43,6 +43,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/admin-account', [SuperadminController::class, 'index'])->name('admin.account');
         Route::get('/management-produk/makanan', [ManagementProdukController::class, 'makanan'])->name('management-produk.makanan');
         Route::get('/management-produk/minuman', [ManagementProdukController::class, 'minuman'])->name('management-produk.minuman');
+        Route::get('/management-produk/search', [ManagementProdukController::class, 'search'])->name('management-produk.search');
         Route::post('/management-produk', [ManagementProdukController::class, 'store'])->name('management-produk.store');
         Route::get('/dashboard-admin', [DashboardAdminController::class, 'dashboard_admin'])->name('superadmin.dashboard_admin');
         Route::get('/create-menu', [CreateMenuController::class, 'create'])->name('management_produk.create_menu');
@@ -55,8 +56,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::middleware(['CheckUserRole:customer'])->group(function () {
         Route::get('/dashboard-customer', [CustomerController::class, 'index'])->name('customer.dashboard-customer');
-        Route::get('/cart-customer', [CartController::class, 'cart'])->name('customer.cart-customer');
-        
+        Route::get('/cart-customer', [CartController::class, 'cart'])->name('customer.cart');
+        Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('customer.addToCart');
     });
 });  
 
