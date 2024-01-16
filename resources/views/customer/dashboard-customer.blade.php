@@ -16,7 +16,7 @@
         <div class="container justify-center flex ">
             <div class="responsive w-[700px] ">
 
-                <img src="{{ asset('assets/logo/logo.png') }}" alt="Image 1" class="w-full rounded-xl shadow-md">
+                <img src="{{ asset('assets/image/promo0.png') }}" alt="Image 1" class="w-full rounded-xl shadow-md">
                 <img src="{{ asset('assets/image/promo2.png') }}" alt="Image 2" class="w-full rounded-xl shadow-md">
                 <img src="{{ asset('assets/image/promo1.png') }}" alt="Image 3" class="w-full rounded-xl shadow-md">
 
@@ -95,13 +95,12 @@
                                     {{ $produk->detail }}
                                 </p>
                             </div>
-                            <div
-                                class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200  dark:border-gray-700 dark:divide-gray-700">
+                            <div>
                                 <form method="POST" action="{{ route('customer.addToCart', ['id' => $produk->id]) }}">
                                     @csrf
                                     <button
-                                        class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-bl-xl rounded-br-xl font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-                                        {{-- href={{ route('customer.addToCart', ['id' => $produk->id]) }} --}}
+                                        class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-br-xl rounded-bl-xl font-medium text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                                        
                                         >
                                         Order Now
                                     </button>
@@ -147,13 +146,12 @@
                                     {{ $produk->detail }}
                                 </p>
                             </div>
-                            <div
-                                class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200  dark:border-gray-700 dark:divide-gray-700">
+                            <div>
                                 <form method="POST" action="{{ route('customer.addToCart', ['id' => $produk->id]) }}">
                                     @csrf
                                     <button
                                         class="w-full py-3 px-4 inline-flex justify-center items-center gap-2 rounded-bl-xl rounded-br-xl font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm sm:p-4 dark:bg-slate-900 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 dark:hover:text-white dark:focus:ring-offset-gray-800"
-                                        {{-- href={{ route('customer.addToCart', ['id' => $produk->id]) }} --}}
+                                        
                                         >
                                         Order Now
                                     </button>

@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index(){
         if(Auth::user()->role == 'superadmin'){
-         return redirect()->route('superadmin.dashboard_admin');
+        return redirect()->route('superadmin.dashboard_admin');
 
         }
         $makanan = Produk::where("kategori_id", 1)->get();

@@ -135,7 +135,7 @@
                   <th scope="col" class="px-6 py-3 text-start">
                     <div class="flex items-center gap-x-2">
                       <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                        qty
+                        Quantity
                       </span>
                     </div>
                   </th>
@@ -158,14 +158,14 @@
                 </tr>
               </thead>
   
-              <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+              {{-- <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                 <tr class="bg-white hover:bg-gray-50 dark:bg-slate-900 dark:hover:bg-slate-800">
                   <td class="h-px w-px whitespace-nowrap align-top">
                     <a class="block p-6" href="#">
                       <div class="flex items-center gap-x-4">
-                        <img class="flex-shrink-0 h-[2.375rem] w-[2.375rem] rounded-lg" src="https://images.unsplash.com/photo-1572307480813-ceb0e59d8325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=320&q=80" alt="Image Description">
+                        <img class="flex-shrink-0 h-[2.375rem] w-[2.375rem] rounded-lg" src="" alt="">
                         <div>
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">Brown Hat</span>
+                          <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">-</span>
                         </div>
                       </div>
                     </a>
@@ -173,10 +173,10 @@
                   <td class="h-px w-px whitespace-nowrap align-top">
                     <a class="block p-6" href="#">
                       <div class="flex items-center gap-x-3">
-                        <img class="inline-block h-[2.375rem] w-[2.375rem] rounded-full" src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description">
+                        <img class="inline-block h-[2.375rem] w-[2.375rem] rounded-full" src="" alt="">
                         <div class="grow">
-                          <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">Christina Bersh</span>
-                          <span class="block text-sm text-gray-500">christina@site.com</span>
+                          <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">-</span>
+                          <span class="block text-sm text-gray-500">-</span>
                         </div>
                       </div>
                     </a>
@@ -281,6 +281,6 @@
                       </span>
                     </a>
                   </td>
-                </tr>
+                </tr> --}}
 
 @endsection

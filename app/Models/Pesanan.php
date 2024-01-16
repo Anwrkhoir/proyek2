@@ -11,19 +11,15 @@ class Pesanan extends Model
     use HasFactory;
 
     protected $fillable = [
-        ('produk_id'),
-        ('pcs'),
-        ('kategori_id'),
-        ('user_id'),
+        ('keranjang_id'),
+        ('total'),
         ('layanan'),
         ('status'),  
     ];
 
-    public function produk(){
-        return $this->belongsTo(Produk::class);
+    public function keranjang(){
+        return $this->belongsTo(Keranjang::class);
     }
 
-    // public function kategori(){
-    //     return $this->belongsTo(Kategori::class);
-    // }
+    
 }

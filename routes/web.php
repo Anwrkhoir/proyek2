@@ -7,6 +7,9 @@ use App\Http\Controllers\admin\ManagementProdukController;
 use App\Http\Controllers\admin\PesananController;
 use App\Http\Controllers\admin\TransaksiController;
 use App\Http\Controllers\customer\CartController;
+use App\Http\Controllers\customer\ConfirmationConntroller;
+use App\Http\Controllers\customer\ConfirmationController;
+use App\Http\Controllers\customer\PesananController as CustomerPesananController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
@@ -55,9 +58,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::middleware(['CheckUserRole:customer'])->group(function () {
-        Route::get('/dashboard-customer', [CustomerController::class, 'index'])->name('customer.dashboard-customer');
+        Route::get('/dashboard-customer', [DashboardController::class, 'index'])->name('customer.dashboard-customer');
         Route::get('/cart-customer', [CartController::class, 'cart'])->name('customer.cart');
         Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('customer.addToCart');
+        Route::post('/add-produk/{id}', [CartController::class, 'add_my_cart'])->name('customer.addProduk');
+        Route::delete('/destroy-produk/{id}', [CartController::class, 'destroy_my_cart'])->name('customer.destroyProduk');
+        Route::get('/pesanan-customer', [CustomerPesananController::class, 'pesanan'])->name('customer.pesanan');
+        Route::get('/confirmation-customer', [CustomerPesananController::class, 'confirmation'])->name('customer.confirmation');
+        
+
     });
 });  
 

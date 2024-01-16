@@ -46,4 +46,33 @@ class CartController extends Controller
 
         return redirect()->route('customer.cart');
     }
+
+    public function destroy_my_cart($id)
+    {
+        $myCart = Keranjang::find($id);
+        if (!$myCart) {
+            return 'kosong';
+        }
+        if ($myCart->quantity > 1) {
+            $myCart->quantity = $myCart->quantity - 1;
+            $myCart->save();
+            return redirect()->route('customer.cart');
+        }
+        $myCart->delete();
+        return redirect()->route('customer.cart');
+    }
+    public function add_my_cart($id)
+    {
+        $myCart = keranjang::find($id);
+        if (!$myCart) {
+            return 'kosong';
+        }
+
+        $myCart->quantity = $myCart->quantity + 1;
+        $myCart->save();
+
+        $myCart->save();
+        return redirect()->route('customer.cart');
+    }
+
 }
